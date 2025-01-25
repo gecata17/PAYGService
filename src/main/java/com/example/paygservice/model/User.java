@@ -9,13 +9,17 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @Entity
+@AllArgsConstructor
 @Table(name = "app_user")
 @Data
 public class User  {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(name = "username", nullable = false)
-    String username;
+    private String username;
 
     @JsonIgnore
     @Column(name = "password",nullable = false)
@@ -24,13 +28,10 @@ public class User  {
     @Column(name = "email",nullable = false)
     private String email;
 
-
-
-    public User(String username, String email,String password) {
+    public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-
     }
 
     public User(UserDetailsImplementation userDetails){
@@ -38,5 +39,4 @@ public class User  {
         this.email=userDetails.getEmail();
         this.password=userDetails.getPassword();
     }
-
 }
