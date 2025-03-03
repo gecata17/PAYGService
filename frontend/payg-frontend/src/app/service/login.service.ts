@@ -5,8 +5,7 @@ import {
   LoginUser
 
 } from '../model/login-model';
-import { environment } from '../environments/environment';
-
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })

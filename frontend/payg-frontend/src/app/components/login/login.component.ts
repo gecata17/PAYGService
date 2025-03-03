@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
           this.tokenStorage.saveUser(response.username);
           this.tokenStorage.saveToken(response.token);
           this.isLoggedIn = true;
+          //TO DO: add navigation to home page when it is ready 
         }
       },
       error: (err) => {

@@ -9,8 +9,8 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'signup'
   },
-  { path: 'private/api/auth/login', component: LoginComponent },
-  { path: 'private/api/auth/signup',component: SignupComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'signup',component: SignupComponent},
 ];
 
 @NgModule({
