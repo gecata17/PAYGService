@@ -5,24 +5,25 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Collections;
 
 public class UserDetailsImplementation  implements UserDetails {
     private final String username;
     private final String email;
+    private final BigDecimal balance;
 
     @JsonIgnore
     private final String password;
 
-
-
     private final Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImplementation(Long id,String username, String email, String password,Collection<? extends GrantedAuthority> authorities) {
+    public UserDetailsImplementation(Long id,String username, String email, String password, BigDecimal balance,Collection<? extends GrantedAuthority> authorities) {
         this.username = username;
         this.email = email;
         this.password = password;
+        this.balance=balance;
         this.authorities=authorities;
     }
 
@@ -30,6 +31,7 @@ public class UserDetailsImplementation  implements UserDetails {
         this.username=user.getUsername();
         this.email=user.getEmail();
         this.password=user.getPassword();
+        this.balance=user.getBalance();
         this.authorities= Collections.emptyList();
     }
 
@@ -48,10 +50,11 @@ public class UserDetailsImplementation  implements UserDetails {
         return username;
     }
 
-
     public String getEmail(){
         return email;
     }
+
+    public BigDecimal getBalance() { return balance; }
 
     @Override
     public boolean isAccountNonExpired() {

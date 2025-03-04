@@ -2,6 +2,7 @@ package com.example.paygservice.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
 
@@ -21,13 +22,5 @@ public class Article {
     
     @Column(columnDefinition = "TEXT")
     private String description;
-
-    // Custom setter and getter for id if needed
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
+    
 } 

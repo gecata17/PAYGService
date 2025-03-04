@@ -42,27 +42,4 @@ public class ReadingProgress {
         this.timeSpentSeconds = 0L;
     }
 
-    public Long getUserId() {
-        return user != null ? user.getId() : null;
-    }
-
-    public Long getArticleId() {
-        return article != null ? article.getId() : null;
-    }
-
-    public Integer getProgressPercentage() {
-        return progress;
-    }
-
-    public Long getTimeSpentSeconds() {
-        return timeSpentSeconds;
-    }
-
-    public Integer getLastReadPosition() {
-        return lastReadPosition;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return lastReadTime;
-    }
 } 

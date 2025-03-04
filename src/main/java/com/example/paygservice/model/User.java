@@ -5,11 +5,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
 @AllArgsConstructor
+@Entity
 @Table(name = "app_user")
 @Data
 public class User  {
@@ -28,15 +30,19 @@ public class User  {
     @Column(name = "email",nullable = false)
     private String email;
 
-    public User(String username, String email, String password) {
+    @Column(name = "balance",nullable = false)
+    private BigDecimal balance;
+
+    public User(String username, String email,String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-    }
 
+    }
     public User(UserDetailsImplementation userDetails){
         this.username=userDetails.getUsername();
         this.email=userDetails.getEmail();
         this.password=userDetails.getPassword();
+        this.balance = userDetails.getBalance();
     }
 }

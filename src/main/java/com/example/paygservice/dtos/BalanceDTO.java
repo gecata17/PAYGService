@@ -1,4 +1,4 @@
-package com.example.paygservice.dto;
+package com.example.paygservice.dtos;
 
 import lombok.Builder;
 import lombok.Data;

@@ -18,7 +18,7 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long userId;
+    private Long userId; //link in db
 
     @Enumerated(EnumType.STRING)
     private TransactionType type;
